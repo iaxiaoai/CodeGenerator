@@ -186,6 +186,8 @@ void MainWindow::InitConsole()
     widget->setStyleSheet("background-color:gray;");
     dockWidget->setWidget(widget);
     this->addDockWidget(Qt::BottomDockWidgetArea,dockWidget);
+
+    this->setTree(dockWidget);
 }
 
 void MainWindow::InitCentralWidget()
@@ -211,70 +213,54 @@ void MainWindow::InitCentralWidget()
 //    this->addDockWidget(Qt::BottomDockWidgetArea,dockWidget);
 }
 
-void MainWindow::setTree(QWidget a)
+void MainWindow::setTree(QDockWidget *container)
 {
 
-    QTreeView *treeView = new QTreeView();
-    QStandardItemModel *model = new QStandardItemModel(treeView);
-    //树节点改变时触发此信号
-    connect(model,SIGNAL(itemChanged(QStandardItem*)),this,SLOT(treeItemChanged(QStandardItem*)));
-
-        QIcon treeitemicon(":/images/Crate.bmp");
-        QIcon treerooticon(":/images/NeHe.bmp");
-
-        //set header
-            model->setHorizontalHeaderLabels(QStringList()<<QString("Setting"));
-        //add RootItem
-            QStandardItem* itemProject = new QStandardItem(treerooticon,QString("atmosphere"));
-            QStandardItem* itemProject1 = new QStandardItem(treerooticon,QString("pollution"));
-            itemProject->setCheckable(true);
-            itemProject1->setCheckable(true);
-        //set RootItem checkable
-            model->appendRow(itemProject);
-            model->appendRow(itemProject1);
-
-        //add item
-            QStandardItem* itemChild = new QStandardItem(treeitemicon,QString("childitem"));
-            QStandardItem* itemChild1 = new QStandardItem(treeitemicon,QString("childitem1"));
-            QStandardItem* itemChild2 = new QStandardItem(treeitemicon,QString("childitem2"));
-            QStandardItem* itemChild3 = new QStandardItem(treeitemicon,QString("childitem3"));
-
-            //set ChildItem checkable
-            itemChild->setCheckable(true);
-            itemChild1->setCheckable(true);
-            itemChild2->setCheckable(true);
-            itemChild3->setCheckable(true);
-            //定义QList
-            QList<QStandardItem*>ItemList;
-            QList<QStandardItem*>ItemList2;
-    //        ItemList.append(itemChild);
-    //        ItemList.append(itemChild1);
-    //将节点加入QList
-            ItemList<<itemChild<<itemChild1;
-            ItemList2<<itemChild2<<itemChild3;
-    //添加多个子节点，添加单个子节点时用appendRow
-            itemProject->appendRows(ItemList);
-            itemProject1->appendRows(ItemList2);
-            treeView->setModel(model);
+    // 如果是自定义组件 需要配合
+    // peripheralTree->setItemWidget();
+    // 使用
 
 
-//    void Widget::treeItemChanged(QStandardItem *item)
-//    {
-//        qDebug()<<"item changed trigger";
-//        //如果节点可选并且含有子节点
-//        if ( item->isCheckable()&&item->hasChildren())
-//            {
+    peripheralTree = new QTreeWidget();
+    peripheralTree->setHeaderHidden(true);
+     peripheralTree->setHeaderLabel(tr("外设列表"));
+     QTreeWidgetItem *pRootDeptItem = new QTreeWidgetItem(peripheralTree);
+     pRootDeptItem->setText(0, tr("Cities"));
 
-//                Qt::CheckState state = item->checkState (); //获取当前的选择状态
-//                //同步父子节点的状态
-//                 for(int i = 0;i<item->rowCount();++i)
-//                 {
-//                     QStandardItem* childItems = item->child(i);
-//                     childItems->setCheckState(state);
-//                 }
-//            }
-//    }
 
+     for(int i = 0 ; i < 10 ; i++)
+     {
+         QTreeWidgetItem *osloItem = new QTreeWidgetItem(pRootDeptItem);
+         QString s ="Oslo :"+QString::number(i);
+         osloItem->setText(0, tr(s.toLocal8Bit().data()));
+     }
+
+
+         QTreeWidgetItem *newItem1=new QTreeWidgetItem(peripheralTree);
+         newItem1->setText(0,"第一顶部的结点");
+
+         QTreeWidgetItem *newItem2=new QTreeWidgetItem(peripheralTree);
+         newItem2->setText(0,"第二顶部的结点");
+
+         QTreeWidgetItem *newItem3=new QTreeWidgetItem(peripheralTree);
+         newItem3->setText(0,"第三顶部的结点");
+
+         QTreeWidgetItem *newItem4=new QTreeWidgetItem(peripheralTree);
+         newItem4->setText(0,"第四顶部的结点");
+
+         QTreeWidgetItem *newItem5=new QTreeWidgetItem(peripheralTree);
+         newItem5->setText(0,"第五顶部的结点");
+
+
+
+
+
+
+
+
+
+
+    container->setWidget(peripheralTree);
 }
 
 void MainWindow::parseBlog(QXmlStreamReader &reader) {

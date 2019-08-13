@@ -5,7 +5,8 @@
 #include <QtXml>
 #include <QFile>
 #include <QXmlQuery>
-
+#include <QTreeWidget>
+#include <QLabel>
 namespace Ui {
 class MainWindow;
 }
@@ -23,11 +24,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    QTreeWidget *peripheralTree ;
+
+
     void InitMenuBarUI();
     void InitLeftMenu();
     void InitConsole();
     void InitCentralWidget();
-    void setTree(QWidget a);
+    void setTree(QDockWidget* container);
 };
 
 #endif // MAINWINDOW_H
