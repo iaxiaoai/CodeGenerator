@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyGLWidget</class>
+ <widget class="QWidget" name="MyGLWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>200</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <widget class="QDockWidget" name="dockWidgetasd">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-21</y>
+       <width>120</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <widget class="QWidget" name="dockWidgetContents"/>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

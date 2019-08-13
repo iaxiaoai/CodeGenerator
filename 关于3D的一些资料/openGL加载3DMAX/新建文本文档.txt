@@ -1,0 +1,24 @@
+创建
+https://blog.csdn.net/Fox_Alex/article/details/80163942
+免费的3D模型
+https://free3d.com/3d-models/3d-printable-obj
+openGL加载3DMAX(obj文件)步骤
+	解析文件
+		解析	渲染
+		解析	阴影
+		解析	颜色
+		....
+	加载文件
+	绘制
+
+
+https://blog.csdn.net/wanghualin033/article/details/84642286
+https://blog.csdn.net/qq_38105943/article/details/86538446
+
+http://www.opengl-tutorial.org/cn/
+例子
+https://github.com/DanWatkins/Terrain3D
+https://github.com/hardware/ObjectViewer
+
+
+https://github.com/chenzilin/qt-opengl

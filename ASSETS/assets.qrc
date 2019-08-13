@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>common/icon_title.png</file>
+        <file alias="new">common/icon_new.png</file>
+        <file alias="open">common/icon_open.png</file>
+        <file alias="save">common/icon_save.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>images/background.png</file>
+        <file>images/cubelogo.png</file>
+        <file>images/dog.jpg</file>
+        <file>images/NeHe.bmp</file>
+        <file>images/Crate.bmp</file>
+        <file>images/Glass.bmp</file>
+        <file>images/Star.bmp</file>
+        <file>world/World.txt</file>
+    </qresource>
+</RCC>
