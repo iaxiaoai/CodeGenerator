@@ -1,0 +1,19 @@
+﻿参考
+https://yq.aliyun.com/articles/630209
+https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440
+
+
+ git push origin master //推送到主分支
+ git clone git@github.com:michaelliao/gitskills.git //拉取到本地
+
+
+ git checkout -b dev1 创建分支并切换到新的分支
+ git branch dev1 创建分支
+ git checkout dev1 切换分支
+ git branch 查看分支
+
+界面
+	功能
+		OPENGL  绘制STM32
+		通过 XML 获取该型号的 STM32 所有驱动
+		生成 CODE
